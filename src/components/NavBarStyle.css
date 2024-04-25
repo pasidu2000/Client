@@ -1,12 +1,15 @@
 nav{
     background-color: #333;
     color: white;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 80px;
+    padding: 10px 30px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    width: 100%; /* Set the width to your desired value */
+    height: 130px;
+    padding-bottom: 36px;
+    
 }
 
 #navbar{
@@ -44,3 +47,54 @@ nav{
     bottom: -5px;
     left: 20px;
 }
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+  }
+  
+  .nav-links li ,.account{
+    display: inline;
+    margin: 0 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .account {
+    margin-left: 20px;
+  }
+
+  .cart {
+    margin-left: 90px;
+    margin-right: 10px;
+  }
+
+  .Shop Logo {
+    margin-right: auto;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 50px 50px;
+    border-radius: 5px;
+    margin: 50px;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 50px; /* Increase this value to move the search bar more to the right */
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    font-size: 16px;
+    margin-left: 10px; /* Add space between the search icon and the search input */
+  }

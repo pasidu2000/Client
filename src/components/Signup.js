@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SignupValidation from '../SignupValidation';
-import backgroundImage from '../T2.jpg'; // Import your background image here
+import backgroundImage from '../Images/T2.jpg'; // Import your background image here
 
 function Signup() {
   const [values, setValues] = useState({

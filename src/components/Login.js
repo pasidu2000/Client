@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginValidation from "../LoginValidation";
-import backgroundImage from "../T2.jpg"; // Import your background image here
+import backgroundImage from "../Images/T2.jpg"; // Import your background image here
+import axios from "axios";
 
 function Login() {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     email: '',
     password: ''
@@ -16,7 +18,22 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErrors(LoginValidation(values));
+    // setErrors(LoginValidation(values));
+    axios.post("http://localhost:4000/login", values)
+      .then(response => {
+        console.log(response);
+        if (response.data === "Invalid credentials") {
+          alert("Invalid credentials");
+        } else {
+          navigate("/navbar");
+        }
+        
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+
   };
 
   return (
@@ -35,6 +52,7 @@ function Login() {
               placeholder="Enter the email"
               name="email"
               onChange={handleInput}
+              value={values.email}
               className="form-control rounded-0"
             />
             {errors.email && <span className="text-danger">{errors.email}</span>}
@@ -46,6 +64,7 @@ function Login() {
               type="password"
               placeholder="Enter the password"
               name="password"
+              value={values.password}
               onChange={handleInput}
               className="form-control rounded-0"
             />

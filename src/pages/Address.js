@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom';
 
-// Address page component
+
 function Address() {
   const navigate = useNavigate();
 

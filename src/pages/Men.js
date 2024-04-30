@@ -5,30 +5,31 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import TShirt1 from "../Images/T3.jpg";
-import TShirt2 from "../Images/T4.jpg";
-import TShirt3 from "../Images/T5.jpg";
-import TShirt4 from "../Images/T6.jpg";
-import TShirt5 from "../Images/T7.jpg";
-import TShirt6 from "../Images/T8.jpg";
+import TShirt8 from "../Images/T10.jpg";
+import TShirt9 from "../Images/T11.jpg";
+import TShirt10 from "../Images/T12.jpg";
+import TShirt11 from "../Images/T13.jpg";
+import TShirt12 from "../Images/T14.jpg";
+import TShirt13 from "../Images/T15.jpg";
+
 
 const tshirts = [
-  { id: 1, name: 'TShirt1', image: TShirt1, price: 'Rs.1800' },
-  { id: 2, name: 'TShirt2', image: TShirt2, price: 'Rs.1800' },
-  { id: 3, name: 'TShirt3', image: TShirt3, price: 'Rs.1800'},
-  { id: 4, name: 'TShirt4', image: TShirt4, price: 'Rs.1800' },
-  { id: 5, name: 'TShirt5', image: TShirt5, price: 'Rs.1800' },
-  { id: 6, name: 'TShirt6', image: TShirt6, price: 'Rs.1800'},
-  
+  { id: 1, name: 'TShirt8', image: TShirt8, price: 'Rs.1200' },
+  { id: 2, name: 'TShirt9', image: TShirt9, price: 'Rs.1200' },
+  { id: 3, name: 'TShirt10', image: TShirt10, price: 'Rs.1200'},
+  { id: 4, name: 'TShirt11', image: TShirt11, price: 'Rs.1200' },
+  { id: 5, name: 'TShirt12', image: TShirt12, price: 'Rs.1200' },
+  { id: 6, name: 'TShirt13', image: TShirt13, price: 'Rs.1200'},
+
 ];
 
-function HomePage() {
+function Men() {
   return (
     <>
       <NavBar />
-      <div className="HomePage" style={{ marginTop: '60px' }}>
-        <header className="HomePage-header">
-          <h1 style={{ marginTop: '-50px' }}>Welcome to Tharu Fashion</h1>
+      <div className="Men" style={{ marginTop: '60px' }}>
+        <header className="Men-header">
+          <h1 style={{ marginTop: '-50px' }}>Welcome to Men's Section</h1>
         </header>
         <Container>
           <Row>
@@ -54,4 +55,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Men;

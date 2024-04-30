@@ -1,21 +1,72 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+// NavBar.js
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faShoppingCart,faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 import './NavBarStyle.css';
 import logo from '../Images/TFLogo.jpg';
 
 function NavBar() {
+  const location = useLocation();
+  const [hoveredTab, setHoveredTab] = useState(null);
+
+  const handleMouseEnter = (tab) => {
+    setHoveredTab(tab);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredTab(null);
+  };
+
   return (
     <nav>
       <div id="navbar">
-        <img src={logo} alt="Shop Logo" /> {/* Use logo image here */}
+        <img src={logo} alt="Shop Logo" />
         <ul className="nav-links">
-          <li><Link to="/home">Home</Link></li>
-          <li><Link to="/men">Men</Link></li>
-          <li><Link to="/women">Women</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li>
+            <Link
+              to="/home"
+              className={location.pathname === '/home' ? 'active' : ''}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/men"
+              className={location.pathname === '/men' || hoveredTab === 'men' ? 'active' : ''}
+              onMouseEnter={() => handleMouseEnter('men')}
+              onMouseLeave={handleMouseLeave}
+            >
+              Men
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/women"
+              className={location.pathname === '/women' || hoveredTab === 'women' ? 'active' : ''}
+              onMouseEnter={() => handleMouseEnter('women')}
+              onMouseLeave={handleMouseLeave}
+            >
+              Women
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className={location.pathname === '/about' ? 'active' : ''}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className={location.pathname === '/contact' ? 'active' : ''}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
 
         <div className="search-bar">

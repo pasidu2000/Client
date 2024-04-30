@@ -11,7 +11,7 @@ function NavBar() {
       <div id="navbar">
         <img src={logo} alt="Shop Logo" /> {/* Use logo image here */}
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/home">Home</Link></li>
           <li><Link to="/men">Men</Link></li>
           <li><Link to="/women">Women</Link></li>
           <li><Link to="/about">About</Link></li>

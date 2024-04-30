@@ -9,7 +9,6 @@ function Footer() {
     
     <footer className="bg-dark text-light py-4">
       <div id="footer">
-        {/* <div className="shop-name">Tharu Fashion</div> */}
         <Container>
           <Row>
 

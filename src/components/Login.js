@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import LoginValidation from "../LoginValidation";
-import backgroundImage from "../Images/T2.jpg"; // Import your background image here
+import backgroundImage from "../Images/T2.jpg"; 
 import axios from "axios";
 
 function Login() {
@@ -16,24 +15,30 @@ function Login() {
     setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
+  const validateForm = () => {
+    let tempErrors = {};
+    tempErrors.email = values.email ? "" : "Email is required.";
+    tempErrors.password = values.password ? "" : "Password is required.";
+    setErrors(tempErrors);
+    return Object.values(tempErrors).every(x => x === "");
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setErrors(LoginValidation(values));
-    axios.post("http://localhost:4000/login", values)
-      .then(response => {
-        console.log(response);
-        if (response.data === "Invalid credentials") {
-          alert("Invalid credentials");
-        } else {
-          navigate("/navbar");
-        }
-        
-      })
-      .catch(error => {
-        console.log(error);
-      });
-
-
+    if (validateForm()) {
+      axios.post("http://localhost:4000/login", values)
+        .then(response => {
+          console.log(response);
+          if (response.data === "Invalid credentials") {
+            alert("Invalid credentials");
+          } else {
+            navigate("/home");
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   };
 
   return (
@@ -41,7 +46,7 @@ function Login() {
       className="d-flex justify-content-center align-items-center bg-primary vh-100"
       style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover" }}
     >
-      <div className="w-50"></div> {/* This will create space for the image */}
+      <div className="w-50"></div> 
       <div className="p-5 rounded w-40 d-flex flex-column align-items-center border " style={{ backgroundColor: "lightblue", borderColor: "black" }}> {/* Position login form to the right */}
         <h2>Sign-In</h2>
         <form action="" onSubmit={handleSubmit} className="w-100">

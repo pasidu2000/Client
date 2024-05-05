@@ -13,6 +13,7 @@ import Women from "./pages/Women";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import ProductView from "./pages/ProductView";
+import AdminDashboard from'./admin/AdminDashboard';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/productview" element={<ProductView />}></Route>
             <Route path="/about" element={<AboutUs />} /> 
           </Route>
+          {/* <Route path="/admin" element={<AdminDashboard/>} /> */}
       </Routes>
     </BrowserRouter>
   );

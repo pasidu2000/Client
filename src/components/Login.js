@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import backgroundImage from "../Images/T2.jpg"; 
+import backgroundImage from "../Images/T2.jpg";
 import axios from "axios";
 
 function Login() {
@@ -46,8 +46,11 @@ function Login() {
       className="d-flex justify-content-center align-items-center bg-primary vh-100"
       style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover" }}
     >
-      <div className="w-50"></div> 
-      <div className="p-5 rounded w-40 d-flex flex-column align-items-center border " style={{ backgroundColor: "lightblue", borderColor: "black" }}> {/* Position login form to the right */}
+      <div className="w-50"></div>
+      <div className="p-5 rounded w-40 d-flex flex-column align-items-center border " style={{ backgroundColor: "lightblue", borderColor: "black" }}>
+        <div className="text-center mb-4">
+          <h1>Tharu Fashion</h1>
+        </div>
         <h2>Sign-In</h2>
         <form action="" onSubmit={handleSubmit} className="w-100">
           <div className="mb-3">

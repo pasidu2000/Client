@@ -11,6 +11,8 @@ import HomePage from "./pages/HomePage";
 import Men from "./pages/Men";
 import Women from "./pages/Women";
 import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
+import ProductView from "./pages/ProductView";
 
 function App() {
   return (
@@ -27,7 +29,9 @@ function App() {
             <Route path="/orders" element={<Orders />}></Route>
             <Route path="/men" element={<Men />}></Route>
             <Route path="/women" element={<Women />}></Route>
-            <Route path="/about" element={<AboutUs />} /> {/* add a route for the About Us page */}
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/productview" element={<ProductView />}></Route>
+            <Route path="/about" element={<AboutUs />} /> 
           </Route>
       </Routes>
     </BrowserRouter>
